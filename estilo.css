@@ -176,3 +176,60 @@ button:hover {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+@media (max-width: 768px) {
+  body {
+    padding: 20px 10px;
+  }
+
+  .tarjeta {
+    width: 95%;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1em;
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  .pastel {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .Snoopy {
+    width: 150px;
+    height: auto;
+    position: relative;
+    margin-top: 20px;
+    animation: none;
+  }
+
+  .Snoopy1, .Snoopy2 {
+    position: static;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .sorpresa-texto {
+    font-size: 1.5em;
+  }
+
+  .sorpresa-mensaje {
+    font-size: 1em;
+  }
+
+  .explosion {
+    font-size: 2.5em;
+  }
+}
