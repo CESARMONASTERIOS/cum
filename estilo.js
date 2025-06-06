@@ -16,8 +16,6 @@ function toggleMusica() {
     musica.pause();
   }
 }
-
-// Crear globos flotando
 for (let i = 0; i < 20; i++) {
   const globo = document.createElement("div");
   globo.className = "globos";
@@ -25,4 +23,15 @@ for (let i = 0; i < 20; i++) {
   globo.style.backgroundColor = `hsl(${Math.random() * 360}, 80%, 60%)`;
   globo.style.animationDuration = (Math.random() * 3 + 4) + "s";
   document.body.appendChild(globo);
+}
+function mostrarImagenCompleta(src) {
+  const modal = document.getElementById('modal');
+  const modalImagen = document.getElementById('modal-imagen');
+  modal.style.display = 'flex';
+  modalImagen.src = src;
+}
+
+// Cerrar el modal al hacer clic
+function cerrarModal() {
+  document.getElementById('modal').style.display = 'none';
 }
