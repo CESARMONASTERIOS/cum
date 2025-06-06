@@ -45,10 +45,27 @@ button:hover {
 }
 
 #sorpresa {
-  margin-top: 30px;
-  font-size: 1.5em;
-  color: #6d4c41;
   display: none;
+  margin-top: 30px;
+  text-align: center;
+  animation: aparecer 1s ease-out;
+}
+
+.sorpresa-texto {
+  font-size: 2em;
+  color: #d500f9;
+  animation: parpadeoTexto 1s infinite;
+}
+
+.sorpresa-mensaje {
+  font-size: 1.2em;
+  color: #4a148c;
+  animation: subir 1.5s ease;
+}
+
+.explosion {
+  font-size: 4em;
+  animation: zoom 0.5s ease-out;
 }
 
 .pastel {
@@ -76,18 +93,7 @@ button:hover {
   right: 0;
   margin: auto;
   border-radius: 50%;
-  animation: parpadeo 1s infinite alternate;
-}
-
-@keyframes parpadeo {
-  from {
-    transform: scale(1);
-    opacity: 1;
-  }
-  to {
-    transform: scale(1.2);
-    opacity: 0.6;
-  }
+  animation: parpadeoFuego 1s infinite alternate;
 }
 
 .globos {
@@ -103,19 +109,9 @@ button:hover {
   z-index: -1;
 }
 
-@keyframes subir {
-  0% {
-    top: 100%;
-    transform: translateX(-50%) rotate(0deg);
-  }
-  100% {
-    top: -10%;
-    transform: translateX(-50%) rotate(360deg);
-  }
-}
-
 .Snoopy {
-  width: 350px; height: 500px;
+  width: 350px;
+  height: 500px;
   position: absolute;
   bottom: 0;
   animation: flotar 4s ease-in-out infinite;
@@ -129,37 +125,34 @@ button:hover {
   right: 2.5%;
 }
 
-@keyframes flotar {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
-#sorpresa {
-  display: none;
-  margin-top: 30px;
-  text-align: center;
-  animation: aparecer 1s ease-out;
-}
-
-.sorpresa-texto {
-  font-size: 2em;
-  color: #d500f9;
-  animation: parpadeo 1s infinite;
+/* ANIMACIONES */
+@keyframes parpadeoFuego {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
 }
 
-.sorpresa-mensaje {
-  font-size: 1.2em;
-  color: #4a148c;
-  animation: subir 1.5s ease;
-}
-
-.explosion {
-  font-size: 4em;
-  animation: zoom 0.5s ease-out;
-}
-
-@keyframes parpadeo {
+@keyframes parpadeoTexto {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.4; }
+}
+
+@keyframes subir {
+  0% {
+    top: 100%;
+    transform: translateX(-50%) rotate(0deg);
+    opacity: 0;
+  }
+  100% {
+    top: -10%;
+    transform: translateX(-50%) rotate(360deg);
+    opacity: 1;
+  }
 }
 
 @keyframes zoom {
@@ -167,69 +160,12 @@ button:hover {
   100% { transform: scale(1); opacity: 1; }
 }
 
-@keyframes subir {
-  0% { transform: translateY(50px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
-}
-
 @keyframes aparecer {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-@media (max-width: 768px) {
-  body {
-    padding: 20px 10px;
-  }
-
-  .tarjeta {
-    width: 95%;
-    padding: 20px;
-  }
-
-  h1 {
-    font-size: 2em;
-  }
-
-  p {
-    font-size: 1em;
-  }
-
-  button {
-    width: 100%;
-    font-size: 1em;
-    padding: 10px;
-    margin: 10px 0;
-  }
-
-  .pastel {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .Snoopy {
-    width: 150px;
-    height: auto;
-    position: relative;
-    margin-top: 20px;
-    animation: none;
-  }
-
-  .Snoopy1, .Snoopy2 {
-    position: static;
-    display: block;
-    margin: 0 auto;
-  }
-
-  .sorpresa-texto {
-    font-size: 1.5em;
-  }
-
-  .sorpresa-mensaje {
-    font-size: 1em;
-  }
-
-  .explosion {
-    font-size: 2.5em;
-  }
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
 }
